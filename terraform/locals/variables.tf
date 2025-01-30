@@ -1,8 +1,8 @@
-variable "instance_type" {
-    type = string
-    default = "t3.micro"
-    description = "to setup the instance-type" 
-}
+# variable "instance_type" {
+#     type = string
+#     default = "t3.micro"
+#     description = "to setup the instance-type" 
+# }
 
 variable "project" {
     type = string
