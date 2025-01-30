@@ -23,3 +23,7 @@ data "aws_ami" "omnamahashivaya" {
         values = ["hvm"]
     }
 }
+
+data "aws_vpc" "om_vpc" {
+	default = true 
+}
