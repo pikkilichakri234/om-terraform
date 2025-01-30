@@ -3,7 +3,7 @@
 #  Retrieve Existing Infrastructure :- resources like vpc, subnets, sg
 #  Reference External Data:- Pull information like public AMIs, DNS records, or other resources.
 
-data "aws_ami" "joindevops" {
+data "aws_ami" "omnamahashivaya" {
 
 	most_recent      = true
 	owners = ["973714476881"]

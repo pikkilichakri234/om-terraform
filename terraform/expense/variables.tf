@@ -1,3 +1,14 @@
+# variables.tf : terraform we declare all the variables in a fie it is called variables.tf
+
+# syntax:-
+ 
+#  variable "variable-name" {
+#    type =  ["string , list , bool , map , number"]  # different data types  , {}= map , []=list ,""=string , true or flase=bool , 1=number
+#    default = "default-value"  # default value will pick terraform
+#    description = "description about the in this specific datatypes"
+#  }
+
+
 variable "instance_names" {
     type = list(string)
     default = [ "mysql","backend","frontend" ]

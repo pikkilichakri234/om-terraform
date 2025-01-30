@@ -33,3 +33,19 @@ resource "aws_security_group" "allow_ssh_terraform" {
         Name = "allow_sshh"
     }
 }
+
+
+# target:- used to delete a specific resource
+
+# single target:- terraform destroy -target=aws_instance.terraform[0]
+# multi target:- terraform  destroy -target=aws_instance.terraform[1] -target=aws_instance.one[2]
+
+
+# # taint :- it is used to recreate a specifi object in terraform  taint --> alternative ---> replace 
+
+# command:- terraform taint aws_instance.terraform  terraform apply --auto-approve -replace="aws_instance.terraform"
+
+# # untaint :- it is used to  can't recreate a specifi object in terraform 
+
+# command:- terraform untaint aws_instance.terraform
+

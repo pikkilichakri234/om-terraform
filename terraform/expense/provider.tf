@@ -7,6 +7,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  # Configuration options
+provider "aws" {    # terraform is a pluggin that enables interaction with API , provider acts as a intermediate between terraform and the underlying infrastructure.
+  region = "us-east-1"
 }

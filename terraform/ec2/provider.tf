@@ -7,6 +7,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  # Configuration options
+provider "aws" {    # terraform is aplugiin that enables interacton with api's
+  region = "us-east-1"
 }
