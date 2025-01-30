@@ -1,4 +1,4 @@
-resource "aws_instance" "terraform" {
+resource "aws_instance" "om-terraform-123" {
     ami = local.ami_id
     instance_type = local.instance_type
     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
