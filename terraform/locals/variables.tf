@@ -22,7 +22,7 @@ variable "component" {
     description = "to provide the specific project name" 
 }
 
-variable "name" {
+variable "name-project" {
     type = string
     default = "${var.project}-${var.environment}-${var.component}"
     description = "to provide the specific project-component-environment" 
