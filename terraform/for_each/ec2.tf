@@ -1,17 +1,12 @@
-resource "aws_instance" "terraform" {
-    count = length(var.instance_names)
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = "t3.micro"
+resource "aws_instance" "expense" {
+    for_each = var.instances # this variable is map
+    # for_each will give us a special variable with name each
+    ami = "ami-09c813fb71547fc4f" # this AMI ID may change over the time
+    instance_type = each.value
     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
-    # tags = {
-    #     Name = var.instance_names[count.index]
-    # }
-    tags = merge(
-        var.common_tags,
-        {
-            Name = var.instance_names[count.index]
-        }
-    )
+    tags = {
+        Name = each.key
+    }
 }
 
 resource "aws_security_group" "allow_ssh_terraform" {
@@ -35,14 +30,12 @@ resource "aws_security_group" "allow_ssh_terraform" {
         ipv6_cidr_blocks = ["::/0"]
     }
 
-    tags = merge(
-        var.common_tags,
-        {
-            Name = "allow_ssh"
-        }
-    )
+    tags = {
+        Name = "allow_sshh"
+    }
 }
 
-# count:- count is a Terraform meta-argument that allows you to create multiple instances of a resource based on a given number.
+# for_each :- for_each in Terraform is used to iterate over a map or set of strings, allowing you to create multiple resources dynamically.
+ 
+# for_each  use identifier is each.key(represents the key from map/set) , each.value(represents the value assocaited the key) , it is unique keys
 
-# count identifier is count.index  , it is not unique based on index(0,1,2...)
